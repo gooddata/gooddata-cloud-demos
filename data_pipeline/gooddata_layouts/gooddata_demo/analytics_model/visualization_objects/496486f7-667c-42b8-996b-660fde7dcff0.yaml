@@ -1,0 +1,41 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            definition:
+              measureDefinition:
+                aggregation: count
+                filters: []
+                item:
+                  identifier:
+                    id: account_id
+                    type: attribute
+            format: '#,##0'
+            localIdentifier: 9b7d567792fb4833908a311785b31295
+            title: Count of Account ID
+      localIdentifier: measures
+    - items:
+        - attribute:
+            displayForm:
+              identifier:
+                id: account_owner_name
+                type: label
+            localIdentifier: df0f7fda215d4d57ae707e4e0fb0fe0b
+        - attribute:
+            displayForm:
+              identifier:
+                id: account_type
+                type: label
+            localIdentifier: de9b4ff0263d44dfbe07df5b77d8f79c
+      localIdentifier: attribute
+  filters: []
+  properties: {}
+  sorts:
+    - attributeSortItem:
+        attributeIdentifier: df0f7fda215d4d57ae707e4e0fb0fe0b
+        direction: asc
+  version: '2'
+  visualizationUrl: local:table
+description: ''
+id: 496486f7-667c-42b8-996b-660fde7dcff0
+title: Account Owners

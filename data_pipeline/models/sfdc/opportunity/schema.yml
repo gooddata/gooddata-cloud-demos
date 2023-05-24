@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: sfdc_opportunity
+    description: "Opportunity"
+    meta:
+      gooddata:
+        model_id: sfdc
+    columns:
+      - name: opportunity_id
+        description: "Opportunity ID"
+        tests:
+          - dbt_constraints.primary_key
+        meta:
+          gooddata:
+            ldm_type: primary_key
+      - name: opportunity_owner_id
+        meta:
+          gooddata:
+            # TODO - accounts reference users as well, ambiguous references exists in LDM
+            ldm_type: reference
+            referenced_table: sfdc_user
+      - name: account_id
+        meta:
+          gooddata:
+            ldm_type: reference
+            referenced_table: sfdc_account
+      - name: opportunity_name
+      - name: created_date
+      - name: close_date
+      - name: forecast_category
+      - name: opportunity_stage
+      - name: opportunity_amount

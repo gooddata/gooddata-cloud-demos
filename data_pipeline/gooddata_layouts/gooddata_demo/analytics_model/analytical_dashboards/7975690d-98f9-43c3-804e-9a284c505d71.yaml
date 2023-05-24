@@ -1,0 +1,53 @@
+content:
+  filterContextRef:
+    identifier:
+      id: 34625b30-694c-4a53-b78f-cdaf01ec4ad7
+      type: filterContext
+  layout:
+    sections:
+      - header: {}
+        items:
+          - size:
+              xl:
+                gridHeight: 22
+                gridWidth: 6
+            type: IDashboardLayoutItem
+            widget:
+              dateDataSet:
+                identifier:
+                  id: created_date
+                  type: dataset
+              description: ''
+              drills: []
+              ignoreDashboardFilters: []
+              insight:
+                identifier:
+                  id: fbda26e5-2010-4e36-9617-2b3148651554
+                  type: visualizationObject
+              title: Lead Created Trend
+              type: insight
+          - size:
+              xl:
+                gridHeight: 22
+                gridWidth: 6
+            type: IDashboardLayoutItem
+            widget:
+              dateDataSet:
+                identifier:
+                  id: created_date
+                  type: dataset
+              description: ''
+              drills: []
+              ignoreDashboardFilters: []
+              insight:
+                identifier:
+                  id: 71f38018-2623-4377-b1fc-6c597ec08168
+                  type: visualizationObject
+              title: Opportunities created trend
+              type: insight
+        type: IDashboardLayoutSection
+    type: IDashboardLayout
+  version: '2'
+description: ''
+id: 7975690d-98f9-43c3-804e-9a284c505d71
+title: 2. Trends

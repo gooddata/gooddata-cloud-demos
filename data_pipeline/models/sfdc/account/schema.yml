@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: sfdc_account
+    description: "Account"
+    meta:
+      gooddata:
+        model_id: sfdc
+    columns:
+      - name: account_id
+        description: "Account ID"
+        tests:
+          - dbt_constraints.primary_key
+        meta:
+          gooddata:
+            ldm_type: primary_key
+      - name: account_owner_id
+        meta:
+          gooddata:
+            ldm_type: reference
+            referenced_table: sfdc_account_owner
+      - name: account_name
+      - name: account_type

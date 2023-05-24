@@ -1,0 +1,33 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            alias: Opportunities Amount By Stage
+            definition:
+              measureDefinition:
+                aggregation: sum
+                filters: []
+                item:
+                  identifier:
+                    id: opportunity_amount
+                    type: fact
+            format: $#,##0.00
+            localIdentifier: fb49941cc5b14e88a389263b414fab49
+            title: Sum of Opportunity amount
+      localIdentifier: measures
+    - items:
+        - attribute:
+            displayForm:
+              identifier:
+                id: opportunity_stage
+                type: label
+            localIdentifier: 1f435c9742a3465ba64bb13230437052
+      localIdentifier: view
+  filters: []
+  properties: {}
+  sorts: []
+  version: '2'
+  visualizationUrl: local:column
+description: ''
+id: ee554505-d7ee-43ba-9615-43d8fddf9697
+title: Opportunities Amount By Stage

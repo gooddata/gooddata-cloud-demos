@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: sfdc_user
+    description: "User"
+    meta:
+      gooddata:
+        model_id: sfdc
+    columns:
+      - name: user_id
+        tests:
+          - dbt_constraints.primary_key
+        meta:
+          gooddata:
+            ldm_type: primary_key
+      - name: user_name
+      # TODO - reference to user_role
+      - name: user_role_id
+      - name: manager_id
+        meta:
+          gooddata:
+            ldm_type: reference
+            referenced_table: sfdc_manager
+      - name: user_role_name

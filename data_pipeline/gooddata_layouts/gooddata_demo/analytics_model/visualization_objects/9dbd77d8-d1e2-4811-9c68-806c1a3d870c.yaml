@@ -1,0 +1,66 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            definition:
+              measureDefinition:
+                aggregation: sum
+                computeRatio: false
+                filters: []
+                item:
+                  identifier:
+                    id: opportunity_amount
+                    type: fact
+            format: $#,##0.00
+            localIdentifier: 596a0cf806ab4f879608d46462ead5ff
+            title: Sum of Opportunity amount
+      localIdentifier: measures
+    - items:
+        - attribute:
+            displayForm:
+              identifier:
+                id: close_date.day
+                type: label
+            localIdentifier: e187024dbccf4c68ae0fc1ffeaf539ca
+        - attribute:
+            displayForm:
+              identifier:
+                id: user_name
+                type: label
+            localIdentifier: 8c9ecf2a62d341949c9b4485e1896682
+        - attribute:
+            displayForm:
+              identifier:
+                id: opportunity_name
+                type: label
+            localIdentifier: 3dcd3989293c4dc1857d453bbbe73395
+        - attribute:
+            displayForm:
+              identifier:
+                id: forecast_category
+                type: label
+            localIdentifier: 81ab7987a9e741b79915ad51cf9f52fa
+        - attribute:
+            displayForm:
+              identifier:
+                id: opportunity_stage
+                type: label
+            localIdentifier: 9c34beeefc03486e80cc23699fbf7808
+      localIdentifier: attribute
+  filters:
+    - relativeDateFilter:
+        dataSet:
+          identifier:
+            id: close_date
+            type: dataset
+        granularity: GDC.time.year
+  properties: {}
+  sorts:
+    - attributeSortItem:
+        attributeIdentifier: e187024dbccf4c68ae0fc1ffeaf539ca
+        direction: asc
+  version: '2'
+  visualizationUrl: local:table
+description: ''
+id: 9dbd77d8-d1e2-4811-9c68-806c1a3d870c
+title: Opportunities to close this Quarter

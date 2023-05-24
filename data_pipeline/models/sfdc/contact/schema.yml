@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: sfdc_contact
+    description: "Contact"
+    meta:
+      gooddata:
+        model_id: sfdc
+    columns:
+      - name: contact_id
+        description: "Contact ID"
+        tests:
+          - dbt_constraints.primary_key
+        meta:
+          gooddata:
+            ldm_type: primary_key
+      - name: contact_owner_id
+        meta:
+          gooddata:
+            # TODO - accounts reference users as well, ambiguous references exists in LDM
+            ldm_type: reference
+            referenced_table: sfdc_user
+      - name: account_id
+        meta:
+          gooddata:
+            ldm_type: reference
+            referenced_table: sfdc_account
+      - name: contact_email
+      - name: created_date

@@ -1,0 +1,12 @@
+.idea
+.vscode
+logs
+__pycache__
+.venv
+build
+*.egg-info
+dist
+*.iml
+.user.yml
+.env.custom.*
+.meltano

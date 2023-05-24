@@ -1,0 +1,63 @@
+content:
+  filterContextRef:
+    identifier:
+      id: 5452a44e-5b34-4b6a-b6d4-7e1f2430d628
+      type: filterContext
+  layout:
+    sections:
+      - header: {}
+        items:
+          - size:
+              xl:
+                gridHeight: 22
+                gridWidth: 12
+            type: IDashboardLayoutItem
+            widget:
+              description: ''
+              drills: []
+              ignoreDashboardFilters: []
+              insight:
+                identifier:
+                  id: 02bc339e-aa5a-48ad-bc02-7364d3f79c24
+                  type: visualizationObject
+              title: User Roles and Managers
+              type: insight
+        type: IDashboardLayoutSection
+      - header: {}
+        items:
+          - size:
+              xl:
+                gridHeight: 22
+                gridWidth: 6
+            type: IDashboardLayoutItem
+            widget:
+              description: ''
+              drills: []
+              ignoreDashboardFilters: []
+              insight:
+                identifier:
+                  id: 0cb3f7b3-9bd9-4bd2-aae9-042dba4576b9
+                  type: visualizationObject
+              title: Roles and Users
+              type: insight
+          - size:
+              xl:
+                gridHeight: 22
+                gridWidth: 6
+            type: IDashboardLayoutItem
+            widget:
+              description: ''
+              drills: []
+              ignoreDashboardFilters: []
+              insight:
+                identifier:
+                  id: 496486f7-667c-42b8-996b-660fde7dcff0
+                  type: visualizationObject
+              title: Account Owners
+              type: insight
+        type: IDashboardLayoutSection
+    type: IDashboardLayout
+  version: '2'
+description: ''
+id: 773204c2-c018-43e1-adf5-71a1f4764b6d
+title: 1. Users
