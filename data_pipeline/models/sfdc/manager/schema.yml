@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: sfdc_manager
+    description: "Manager"
+    meta:
+      gooddata:
+        model_id: sfdc
+    columns:
+      - name: manager_id
+        tests:
+          - dbt_constraints.primary_key
+        meta:
+          gooddata:
+            ldm_type: primary_key
+      - name: manager_name
+      - name: manager_role_id

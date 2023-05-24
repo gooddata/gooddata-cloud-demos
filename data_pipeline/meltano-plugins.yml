@@ -1,0 +1,20 @@
+version: 1
+default_environment: dev_local
+project_id: gooddata-demo-analytics-v1
+plugins:
+  extractors:
+  - name: tap-salesforce
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-salesforce.git
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl
+  - name: target-postgres
+    variant: transferwise
+    pip_url: git+https://github.com/transferwise/pipelinewise-target-postgres
+  - name: target-snowflake
+    variant: transferwise
+    # TODO - fixed by me in my fork, hopefully it will be merged soon
+    # pip_url: pipelinewise-target-snowflake
+    pip_url: git+https://github.com/jaceksan/pipelinewise-target-snowflake.git

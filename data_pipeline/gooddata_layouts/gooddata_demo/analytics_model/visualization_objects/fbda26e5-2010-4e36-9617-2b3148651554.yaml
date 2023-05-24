@@ -1,0 +1,32 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            definition:
+              measureDefinition:
+                aggregation: count
+                filters: []
+                item:
+                  identifier:
+                    id: lead_id
+                    type: attribute
+            format: '#,##0'
+            localIdentifier: a237adf16b4b49e7a2249bb3ce31cdd3
+            title: Count of Lead ID
+      localIdentifier: measures
+    - items:
+        - attribute:
+            displayForm:
+              identifier:
+                id: created_date.month
+                type: label
+            localIdentifier: d42eaf16c9594a28ae44daba7477d0e8
+      localIdentifier: view
+  filters: []
+  properties: {}
+  sorts: []
+  version: '2'
+  visualizationUrl: local:column
+description: ''
+id: fbda26e5-2010-4e36-9617-2b3148651554
+title: Lead Created Trend

@@ -1,0 +1,41 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            alias: '#of Opportunities'
+            definition:
+              measureDefinition:
+                aggregation: count
+                filters: []
+                item:
+                  identifier:
+                    id: opportunity_id
+                    type: attribute
+            format: '#,##0'
+            localIdentifier: 610b9decf30f4c7280e7bd1f47750417
+            title: Count of Opportunity ID
+      localIdentifier: measures
+    - items:
+        - attribute:
+            displayForm:
+              identifier:
+                id: created_date.month
+                type: label
+            localIdentifier: e187024dbccf4c68ae0fc1ffeaf539ca
+      localIdentifier: view
+    - items:
+        - attribute:
+            displayForm:
+              identifier:
+                id: opportunity_stage
+                type: label
+            localIdentifier: d014d66096fe445a85a526ea8d47dc68
+      localIdentifier: stack
+  filters: []
+  properties: {}
+  sorts: []
+  version: '2'
+  visualizationUrl: local:column
+description: ''
+id: 71f38018-2623-4377-b1fc-6c597ec08168
+title: Opportunities created trend

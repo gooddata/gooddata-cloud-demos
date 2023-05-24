@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  gooddata-cn-ce:
+    # You can use "dev_latest" tag which points to the latest development version of GD.CN
+    image: gooddata/gooddata-cn-ce:2.3
+    ports:
+      - "3000:3000"
+      - "5432:5432"
+    volumes:
+      - gooddata-data-pipeline:/data
+      - ./postgres/99-custom.conf:/etc/postgresql/13/main/conf.d/99-custom.conf
+    environment:
+      LICENSE_AND_PRIVACY_POLICY_ACCEPTED: "YES"
+      APP_LOGLEVEL: "INFO"
+      GDC_FEATURES_VALUES_ENABLE_METRIC_SQL_AND_DATA_EXPLAIN: 'ENABLED'
+
+  bootstrap_origins:
+    image: alpine/curl
+    entrypoint:
+      - /bin/sh
+      - -c
+    command:
+      - |
+        curl -v -H "Authorization: Bearer $GOODDATA_TOKEN" -s -H "Content-Type: application/vnd.gooddata.api+json" -H "Host: localhost" -X PATCH \
+            -d "{
+              \"data\": {
+                \"id\": \"$$GOODDATA_ORGANIZATION\",
+                \"type\": \"organization\",
+                \"attributes\": {
+                  \"allowedOrigins\": [\"https://localhost:8443\"]
+                }
+              }
+            }" \
+          gooddata-cn-ce:3000/api/v1/entities/admin/organizations/$$GOODDATA_ORGANIZATION
+    environment:
+      GOODDATA_TOKEN: YWRtaW46Ym9vdHN0cmFwOmFkbWluMTIz
+      GOODDATA_ORGANIZATION: default
+
+
+
+volumes:
+  gooddata-data-pipeline:

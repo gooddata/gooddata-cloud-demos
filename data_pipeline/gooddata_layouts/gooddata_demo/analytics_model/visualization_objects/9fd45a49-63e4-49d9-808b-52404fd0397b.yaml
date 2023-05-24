@@ -1,0 +1,25 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            alias: Total Opportunities Amount
+            definition:
+              measureDefinition:
+                aggregation: sum
+                filters: []
+                item:
+                  identifier:
+                    id: opportunity_amount
+                    type: fact
+            format: $#,##0.00
+            localIdentifier: fb49941cc5b14e88a389263b414fab49
+            title: Sum of Opportunity amount
+      localIdentifier: measures
+  filters: []
+  properties: {}
+  sorts: []
+  version: '2'
+  visualizationUrl: local:headline
+description: ''
+id: 9fd45a49-63e4-49d9-808b-52404fd0397b
+title: Total Opportunities Amount

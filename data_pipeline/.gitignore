@@ -1,0 +1,7 @@
+target/
+dbt_packages/
+logs/
+.meltano
+.env
+plugins/
+output/

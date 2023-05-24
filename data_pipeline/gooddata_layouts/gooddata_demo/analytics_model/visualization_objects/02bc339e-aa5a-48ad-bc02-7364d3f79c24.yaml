@@ -1,0 +1,39 @@
+content:
+  buckets:
+    - items:
+        - attribute:
+            displayForm:
+              identifier:
+                id: user_role_name
+                type: label
+            localIdentifier: f39ea4e16e5a47d1a3b7b5d8c57dceb2
+        - attribute:
+            displayForm:
+              identifier:
+                id: manager_name
+                type: label
+            localIdentifier: 1d89ef761ff843a58cdba00f301c4e40
+        - attribute:
+            displayForm:
+              identifier:
+                id: user_name
+                type: label
+            localIdentifier: 7fe241bc65624a8790f9be62778803c2
+      localIdentifier: attribute
+  filters: []
+  properties:
+    controls:
+      columnWidths:
+        - attributeColumnWidthItem:
+            attributeIdentifier: f39ea4e16e5a47d1a3b7b5d8c57dceb2
+            width:
+              value: 198
+  sorts:
+    - attributeSortItem:
+        attributeIdentifier: f39ea4e16e5a47d1a3b7b5d8c57dceb2
+        direction: asc
+  version: '2'
+  visualizationUrl: local:table
+description: ''
+id: 02bc339e-aa5a-48ad-bc02-7364d3f79c24
+title: User Roles and Managers

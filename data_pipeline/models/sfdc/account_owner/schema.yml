@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: sfdc_account_owner
+    description: "Account Owner"
+    meta:
+      gooddata:
+        model_id: sfdc
+    columns:
+      - name: account_owner_id
+        tests:
+          - dbt_constraints.primary_key
+        meta:
+          gooddata:
+            ldm_type: primary_key
+      - name: account_owner_name
+      # TODO - reference to user_role
+      - name: account_owner_role_id

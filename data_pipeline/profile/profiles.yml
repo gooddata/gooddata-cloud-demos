@@ -1,0 +1,31 @@
+default:
+  target: dev_local
+  outputs:
+    # Define default values for all env vars to do not have to set them even when they are not needed
+    # This is required in the analytics stage, where we have to run dbt compile, but we want to read only metrics
+    dev_local:
+      # Title is not a standard dbt field. We use it as a title of GoodData data source.
+      # If not filled, ID(dict key) is used
+      title: "Internal BI (dev local)"
+      type: postgres
+      threads: 1
+      host: "{{ env_var('POSTGRES_HOST', 'localhost') }}"
+      port: "{{ env_var('POSTGRES_PORT', '5432') | int }}"
+      user: "{{ env_var('POSTGRES_USER', 'demouser') }}"
+      password: "{{ env_var('POSTGRES_PASS', 'demopass') }}"
+      dbname: "{{ env_var('POSTGRES_DBNAME', 'demo') }}"
+      # Default, used by shared objects (e.g. calendar table), otherwise custom schemas may be used in models.
+      schema: "{{ env_var('INPUT_SCHEMA', 'gd_demo_output_stage') }}"
+    # Copy & paste below targets, reasons:
+    # 1. the env variables must be shared with Meltano, so we cannot hardcode them here
+    # 2. we cannot create single target, because its name (dict key) is used as ID of GoodData data source
+    dev_cloud:
+      title: "Internal BI (dev)"
+      type: snowflake
+      threads: 1
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT', 'xxxxx') }}"
+      user: "{{ env_var('SNOWFLAKE_USER', 'xxxxx') }}"
+      password: "{{ env_var('SNOWFLAKE_PASS', 'xxxxx') }}"
+      database: "{{ env_var('SNOWFLAKE_DBNAME', 'xxxxx') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE', 'xxxxx') }}"
+      schema: "{{ env_var('INPUT_SCHEMA', 'gd_demo_output_stage') }}"

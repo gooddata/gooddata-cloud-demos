@@ -1,0 +1,73 @@
+content:
+  filterContextRef:
+    identifier:
+      id: c585b88b-d301-46d2-9f56-742dab9422b5
+      type: filterContext
+  layout:
+    sections:
+      - header: {}
+        items:
+          - size:
+              xl:
+                gridHeight: 8
+                gridWidth: 2
+            type: IDashboardLayoutItem
+            widget:
+              dateDataSet:
+                identifier:
+                  id: close_date
+                  type: dataset
+              description: ''
+              drills: []
+              ignoreDashboardFilters: []
+              insight:
+                identifier:
+                  id: 9fd45a49-63e4-49d9-808b-52404fd0397b
+                  type: visualizationObject
+              title: Total Opportunities Amount
+              type: insight
+          - size:
+              xl:
+                gridHeight: 22
+                gridWidth: 6
+            type: IDashboardLayoutItem
+            widget:
+              dateDataSet:
+                identifier:
+                  id: close_date
+                  type: dataset
+              description: ''
+              drills: []
+              ignoreDashboardFilters: []
+              insight:
+                identifier:
+                  id: ee554505-d7ee-43ba-9615-43d8fddf9697
+                  type: visualizationObject
+              title: Opportunities Amount By Stage
+              type: insight
+          - size:
+              xl:
+                gridHeight: 22
+                gridWidth: 12
+            type: IDashboardLayoutItem
+            widget:
+              dateDataSet:
+                identifier:
+                  id: close_date
+                  type: dataset
+              description: ''
+              drills: []
+              ignoreDashboardFilters: []
+              insight:
+                identifier:
+                  id: 9dbd77d8-d1e2-4811-9c68-806c1a3d870c
+                  type: visualizationObject
+              properties: {}
+              title: Opportunities to close
+              type: insight
+        type: IDashboardLayoutSection
+    type: IDashboardLayout
+  version: '2'
+description: ''
+id: e1a1622d-93a8-4d72-8c53-ce1db576cc96
+title: 3. Opportunities

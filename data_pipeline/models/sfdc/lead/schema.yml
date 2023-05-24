@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: sfdc_lead
+    description: "Lead"
+    meta:
+      gooddata:
+        model_id: sfdc
+    columns:
+      - name: lead_id
+        description: "Lead ID"
+        tests:
+          - dbt_constraints.primary_key
+        meta:
+          gooddata:
+            ldm_type: primary_key
+      - name: owner_id
+        meta:
+          gooddata:
+            # TODO - accounts reference users as well, ambiguous references exists in LDM
+            ldm_type: reference
+            referenced_table: sfdc_user
+      - name: converted_contact_id
+      - name: lead_email
+      - name: created_date
+      - name: converted_opportunity_id
+      - name: lead_status

@@ -1,0 +1,11 @@
+content:
+  filters:
+    - dateFilter:
+        from: 0
+        granularity: GDC.time.quarter
+        to: 0
+        type: relative
+  version: '2'
+description: ''
+id: c585b88b-d301-46d2-9f56-742dab9422b5
+title: filterContext

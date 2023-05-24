@@ -1,0 +1,33 @@
+content:
+  buckets:
+    - items:
+        - attribute:
+            displayForm:
+              identifier:
+                id: user_role_name
+                type: label
+            localIdentifier: f39ea4e16e5a47d1a3b7b5d8c57dceb2
+        - attribute:
+            displayForm:
+              identifier:
+                id: user_name
+                type: label
+            localIdentifier: 7fe241bc65624a8790f9be62778803c2
+      localIdentifier: attribute
+  filters: []
+  properties:
+    controls:
+      columnWidths:
+        - attributeColumnWidthItem:
+            attributeIdentifier: f39ea4e16e5a47d1a3b7b5d8c57dceb2
+            width:
+              value: 198
+  sorts:
+    - attributeSortItem:
+        attributeIdentifier: f39ea4e16e5a47d1a3b7b5d8c57dceb2
+        direction: asc
+  version: '2'
+  visualizationUrl: local:table
+description: ''
+id: 0cb3f7b3-9bd9-4bd2-aae9-042dba4576b9
+title: Roles and Users
