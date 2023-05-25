@@ -29,7 +29,7 @@ docker-compose build
 docker-compose up -d gooddata-cn-ce
 # Wait 1-2 minutes to let GoodData to fully start
 docker-compose up bootstrap_origins
-
+```
 
 ## Run in cloud
 
@@ -39,6 +39,18 @@ To make it work, you need to provide credentials for your Salesforce instance - 
 
 ### Set up environment
 TODO: SQL script to set up database, file format
+```SQL
+CREATE DATABASE gd_test_demo;
+
+CREATE OR REPLACE FILE FORMAT gd_test_demo.PUBLIC.MELTANO_FORMAT
+  TYPE = 'CSV'
+  FIELD_DELIMITER = ','
+  ESCAPE = '\\'
+  SKIP_HEADER = 0
+  FIELD_OPTIONALLY_ENCLOSED_BY = '0x22'
+  error_on_column_count_mismatch=false
+;  
+```
 ```shell
 # Fill in missing configurations within .env file - there is .env.demo.local templated for local use-case
 source .env.demo.cloud
