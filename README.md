@@ -1,12 +1,16 @@
 # GoodData Demo project
 
-Target of this demo is to show how GoodData fits into the cloud ecosystem and provide demo on your own Salesforce data.
+Target of this demo is to show how GoodData fits into the cloud ecosystem and provide demo on your own Salesforce data. The aim is the experience to be as smooth as possible, still customisable.
 There are two variants how the demo can work:
 1. Using fully local experience - dockerised GoodData Cloud Native with included Postgres database
 2. Cloud experience where GoodData Cloud is used together with your own Snowflake database
 
 
 ## Run locally
+
+In this scenario, the solution consists of GoodData Cloud Native run within Docker. GD CN comes with included Postgres database so we do not need to worry with additional package.
+Data load from Salesforce is done using [Meltano](https://meltano.com/), for transformation [dbt](https://www.getdbt.com/) is used.
+To make it work, you need to provide credentials for your Salesforce instance - see the point about env file. You can either use username/password and security token authentication or OAuth.
 
 ### Set up environment
 ```shell
@@ -26,20 +30,18 @@ docker-compose up -d gooddata-cn-ce
 # Wait 1-2 minutes to let GoodData to fully start
 docker-compose up bootstrap_origins
 
-# You can even run jobs in the docker way
-docker-compose up extract_load
-```
 
 ## Run in cloud
 
+In this scenario, the solution consists of GoodData Cloud (you can register yourself for [GoodData Trial](https://www.gooddata.com/)). As a data source Snowflake is used. To make the solution work, you will need access to Snowflake warehouse, have database ready and have permissions to fully work with the database for your user.
+Data load from Salesforce is done using [Meltano](https://meltano.com/), for transformation [dbt](https://www.getdbt.com/) is used.
+To make it work, you need to provide credentials for your Salesforce instance - see the point about env file.
+
 ### Set up environment
-For running Cloud demo you will need:
-- GoodData Cloud environment ready (ie. GD Cloud trial TODO: link)
-- Snowflake database ready
 TODO: SQL script to set up database, file format
 ```shell
 # Fill in missing configurations within .env file - there is .env.demo.local templated for local use-case
-source .env.demo.local
+source .env.demo.cloud
 ```
 
 
@@ -60,6 +62,8 @@ meltano --environment $ELT_ENVIRONMENT run tap-salesforce $MELTANO_TARGET --full
 ```
 
 ### Transform
+The example transformation used in the example aims to demonstrate basic work with data and preparation for publishing data within GoodData workspace.
+There is mechanism that can anonymise sensitive information within analytics - emails, names. This can be easily turned on or off by setting up variable "apply_compliance" (in "dbt_project.yml" configuration file).
 ```shell
 # Run dbt
 dbt run --profiles-dir profile --target $ELT_ENVIRONMENT
