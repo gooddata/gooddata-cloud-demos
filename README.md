@@ -79,6 +79,19 @@ dbt-gooddata deploy_models $GOODDATA_UPPER_CASE
 ### Deliver analytics
 ```shell
 dbt-gooddata deploy_analytics $GOODDATA_UPPER_CASE
+```
+At this point you can see your analytics in GD - either in http://localhost:3000 for the local use-case or within your GoodData Cloud trial.
+
+### Store analytics prepared from UI
+This way you can perserve end-user defined objects, store them in your repository and deploy anew as needed
+```shell
 # If you add analytics objects in UI and you want to sync it to this repo:
 dbt-gooddata store_analytics
 ```
+
+## Way Forward
+
+Now you have basic idea on how GoodData can be used to visualise your data here's several examples of further use-cases:
+- add custom objects from your SFDC and make the analytics targeted to your own users
+- add further data sources to enrich the use-case or add other use-cases - you may want to add data from your Hubspot, Jira, Support system, Spreadsheets and more.
+- productise your analytical solution - have separate environment for dev, staging, production orchestrated by automatical pipeline.
