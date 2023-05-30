@@ -5,6 +5,17 @@ There are two variants how the demo can work:
 1. Using fully local experience - dockerised GoodData Cloud Native with included Postgres database
 2. Cloud experience where GoodData Cloud is used together with your own Snowflake database
 
+## Set up environment
+Prepare and activate virtual environment for running tools. 
+
+```shell
+# Create virtualenv and install dependencies
+make dev # Creates virtual env
+# Activate virtualenv
+source .venv/bin/activate
+# Fill in missing configurations within .env file - there is .env.demo.local templated for local use-case
+source .env.demo.local
+```
 
 ## Run locally
 
@@ -12,16 +23,6 @@ In this scenario, the solution consists of GoodData Cloud Native run within Dock
 Data load from Salesforce is done using [Meltano](https://meltano.com/), for transformation [dbt](https://www.getdbt.com/) is used.
 To make it work, you need to provide credentials for your Salesforce instance - see the point about env file. You can either use username/password and security token authentication or OAuth.
 
-### Set up environment
-```shell
-# Create virtualenv and install dependencies
-make dev # Creates virtual env
-# Activate virtualenv
-source .venv/bin/activate
-
-# Fill in missing configurations within .env file - there is .env.demo.local templated for local use-case
-source .env.demo.local
-```
 If you want to develop purely locally, use docker-compose:
 ```shell
 docker-compose build
