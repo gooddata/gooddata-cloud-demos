@@ -66,6 +66,13 @@ cd data_pipeline
 
 ### Extract load
 Each tap is loaded into separate DB schema.
+TODO: There is currently dependencies clash between MEltano and dbt, there is workaround (only needed during initial run). We need to make sure MEltano and dbt have separate environments in future.
+Prior to run Meltano for the first time:
+
+```shell
+pip install --upgrade snowplow-tracker
+```
+
 ```shell
 export TARGET_SCHEMA="${INPUT_SCHEMA_SFDC}"
 meltano --environment $ELT_ENVIRONMENT run tap-salesforce $MELTANO_TARGET
@@ -76,6 +83,14 @@ meltano --environment $ELT_ENVIRONMENT run tap-salesforce $MELTANO_TARGET --full
 ### Transform
 The example transformation used in the example aims to demonstrate basic work with data and preparation for publishing data within GoodData workspace.
 There is mechanism that can anonymise sensitive information within analytics - emails, names. This can be easily turned on or off by setting up variable "apply_compliance" (in "dbt_project.yml" configuration file).
+
+TODO: There is currently dependencies clash between MEltano and dbt, there is workaround (only needed during initial run).  We need to make sure MEltano and dbt have separate environments in future.
+Prior to run dbt for the first time:
+
+```shell
+pip install -Iv snowplow-tracker==0.10.0
+```
+
 ```shell
 # Run dbt
 dbt run --profiles-dir profile --target $ELT_ENVIRONMENT
