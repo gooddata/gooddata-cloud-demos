@@ -10,3 +10,5 @@ dist
 .user.yml
 .env.custom.*
 .meltano
+.env.demo.cloud
+.env.demo.local
