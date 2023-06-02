@@ -7,7 +7,7 @@ There are two variants how the demo can work:
 
 ## Set up environment
 Prepare and activate virtual environment for running tools. 
-
+(There may occur some dependecy errors that do not block solution operations. Please check final status of the jobs, if success is reported it usually means no action is needed)
 ```shell
 # Create virtualenv and install dependencies
 make dev # Creates virtual env
