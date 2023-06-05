@@ -138,7 +138,7 @@ dbt-gooddata deploy_models $GOODDATA_UPPER_CASE
 ```shell
 dbt-gooddata deploy_analytics $GOODDATA_UPPER_CASE
 ```
-At this point you can see your analytics in GD - either in http://localhost:3000 for the local use-case or within your GoodData Cloud trial.
+At this point you can see your analytics in GD - either in http://localhost:3000 for the local use-case or within your GoodData Cloud trial. Please note the analytics depends only on default Salesforce fields and therefore it is very basic, you can easily add your custom fields and enrich the analytics.
 
 ### Store analytics prepared from UI
 This way you can perserve end-user defined objects, store them in your repository and deploy anew as needed
