@@ -39,7 +39,6 @@ Data load from Salesforce is done using [Meltano](https://meltano.com/), for tra
 To make it work, you need to provide credentials for your Salesforce instance - see the point about env file.
 
 ### Set up environment
-TODO: SQL script to set up database, file format
 ```SQL
 CREATE DATABASE gd_test_demo;
 
@@ -52,13 +51,44 @@ CREATE OR REPLACE FILE FORMAT gd_test_demo.PUBLIC.MELTANO_FORMAT
   error_on_column_count_mismatch=false
 ;  
 ```
+
+## Run processes
+### Fill in configuration
+All necessary configuration is stored within configuration files and the extent of needed interaction depends on the deployment variant you have chosen. In case of local environment, you will need to fill following section in ".env.demo.local" file:
+```shell
+# Sensitive secrets to connect to sources, must be entered by you, cannot be committed to git
+export TAP_SALESFORCE_USERNAME="xxxx"
+export TAP_SALESFORCE_PASSWORD="xxxx"
+export TAP_SALESFORCE_SECURITY_TOKEN="xxxx"
+# Alternatively, use OAuth
+# export TAP_SALESFORCE_CLIENT_ID="xxxx"
+# export TAP_SALESFORCE_CLIENT_SECRET="xxxx"
+# export TAP_SALESFORCE_REFRESH_TOKEN="xxxx"
+```
+You can use either username/password authentication or OAuth one.
+
+In case you go with the cloud deployment variant, you will need to fill in ".env.demo.cloud" file. In addition to SFDC credentials as described above, you will also need to fill in credentials for you GoodDAta Cloud environment:
+```shell
+export GOODDATA_ENVIRONMENT_ID="development"
+export GOODDATA_UPPER_CASE="--gooddata-upper-case"
+export GOODDATA_HOST="https://xxxx.on.cloud.gooddata.com"
+export GOODDATA_MODEL_IDS="sfdc"
+export GOODDATA_TOKEN="xxxx"
+```
+And also you Snowflake credentials:
+```shell
+export SNOWFLAKE_USER="xxxx"
+export SNOWFLAKE_PASS="xxxx"
+export SNOWFLAKE_DBNAME=gd_test
+# Format of account in form: XX0000.<region>.aws
+export SNOWFLAKE_ACCOUNT="xxxx"
+export SNOWFLAKE_WAREHOUSE="xxxx"
+```
+Once the credentials are set up, you need to activate the variables:
 ```shell
 # Fill in missing configurations within .env file - there is .env.demo.local templated for local use-case
 source .env.demo.cloud
 ```
-
-
-## Run processes
 ### Running the pipeline
 To run the pipeline directly from local environment, change the directory to pipeline root
 ```shell
