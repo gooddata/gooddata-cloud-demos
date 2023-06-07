@@ -4,7 +4,7 @@ Target of this demo is to show how GoodData fits into the cloud ecosystem and pr
 There are two variants how the demo can work:
 1. Using fully local experience - dockerised GoodData Cloud Native with included Postgres database
 2. Cloud experience where GoodData Cloud is used together with your own Snowflake database
-![alt text](https://github.com/gooddata/gooddata-cloud-demos/master/traffic_schema.png)
+![alt text](https://github.com/gooddata/gooddata-cloud-demos/blob/master/traffic_schema.png)
 
 ## Set up environment
 Prepare and activate virtual environment for running tools. 
