@@ -4,6 +4,7 @@ Target of this demo is to show how GoodData fits into the cloud ecosystem and pr
 There are two variants how the demo can work:
 1. Using fully local experience - dockerised GoodData Cloud Native with included Postgres database
 2. Cloud experience where GoodData Cloud is used together with your own Snowflake database
+![alt text](https://github.com/gooddata/gooddata-cloud-demos/master/traffic_schema.png)
 
 ## Set up environment
 Prepare and activate virtual environment for running tools. 
@@ -13,8 +14,6 @@ Prepare and activate virtual environment for running tools.
 make dev # Creates virtual env
 # Activate virtualenv
 source .venv/bin/activate
-# Fill in missing configurations within .env file - there is .env.demo.local templated for local use-case
-source .env.demo.local
 ```
 
 ## Run locally
@@ -84,9 +83,14 @@ export SNOWFLAKE_DBNAME=gd_test
 export SNOWFLAKE_ACCOUNT="xxxx"
 export SNOWFLAKE_WAREHOUSE="xxxx"
 ```
-Once the credentials are set up, you need to activate the variables:
+Once the credentials are set up, you need to activate the variables - in local use-case:
 ```shell
 # Fill in missing configurations within .env file - there is .env.demo.local templated for local use-case
+source .env.demo.local
+```
+Or in cloud use-case:
+```shell
+# Fill in missing configurations within .env file - there is .env.demo.cloud templated for local use-case
 source .env.demo.cloud
 ```
 ### Running the pipeline
