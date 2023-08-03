@@ -1,0 +1,16 @@
+content:
+  filters:
+    - attributeFilter:
+        attributeElements:
+          uris: []
+        displayForm:
+          identifier:
+            id: lead_email
+            type: label
+        localIdentifier: 8450022b5d664b80b69f21bca2a833d0
+        negativeSelection: true
+        selectionMode: multi
+  version: '2'
+description: ''
+id: e4ac5574-4433-48e4-a3fb-3f94c62349f4
+title: filterContext

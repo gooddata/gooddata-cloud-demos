@@ -1,0 +1,38 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            alias: Revenue Won
+            definition:
+              measureDefinition:
+                filters: []
+                item:
+                  identifier:
+                    id: revenue_closed
+                    type: metric
+            format: $#,##0.00
+            localIdentifier: fee4721072aa4bed8d375e219350862a
+            title: Revenue closed
+      localIdentifier: measures
+    - items:
+        - measure:
+            alias: Revenue Won previous quarter
+            definition:
+              measureDefinition:
+                filters: []
+                item:
+                  identifier:
+                    id: revenue_closed_previous_quarter
+                    type: metric
+            format: $#,##0.00
+            localIdentifier: 0f39c78457d4479397e58a51307847e1
+            title: Revenue closed previous quarter
+      localIdentifier: secondary_measures
+  filters: []
+  properties: {}
+  sorts: []
+  version: '2'
+  visualizationUrl: local:headline
+description: ''
+id: ef8ff104-3788-43a1-92ec-8eb630f0930b
+title: Won Revenue

@@ -1,10 +1,34 @@
 content:
   filters:
     - dateFilter:
-        from: 0
-        granularity: GDC.time.month
-        to: 0
+        from: -1
+        granularity: GDC.time.quarter
+        to: -1
         type: relative
+    - attributeFilter:
+        attributeElements:
+          uris: []
+        displayForm:
+          identifier:
+            id: manager_name
+            type: label
+        localIdentifier: d76860526bef4cb2ae3396bfe12dff2b
+        negativeSelection: true
+        selectionMode: multi
+    - attributeFilter:
+        attributeElements:
+          uris:
+            - GDC Sales Sub-Team 1
+            - GDC Sales Sub-Team 1 Lead
+            - GDC Sales Team
+            - GDC Sales Manager
+        displayForm:
+          identifier:
+            id: user_role_name
+            type: label
+        localIdentifier: 01cda917df4f4dc4b547acf1c8bcb092
+        negativeSelection: false
+        selectionMode: multi
   version: '2'
 description: ''
 id: 5452a44e-5b34-4b6a-b6d4-7e1f2430d628

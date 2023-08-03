@@ -1,0 +1,61 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            alias: Won Opps Count
+            definition:
+              measureDefinition:
+                filters: []
+                item:
+                  identifier:
+                    id: closed_opps_count
+                    type: metric
+            format: '#,##0'
+            localIdentifier: a09dc6c9d1b042cabe12a434fda562ea
+            title: Closed Opps Count
+      localIdentifier: measures
+    - items:
+        - measure:
+            alias: Won Goal
+            definition:
+              measureDefinition:
+                aggregation: sum
+                filters: []
+                item:
+                  identifier:
+                    id: closedgoal
+                    type: fact
+            format: '#,##0'
+            localIdentifier: 67ef8725f3c540cbb733437551c6fa70
+            title: Sum of Closedgoal
+      localIdentifier: secondary_measures
+    - items:
+        - measure:
+            alias: Won Opps Count previous quarter
+            definition:
+              measureDefinition:
+                filters: []
+                item:
+                  identifier:
+                    id: closed_opps_count_previous_quarter
+                    type: metric
+            format: '#,##0'
+            localIdentifier: ad69c0d0638f4781aa8f973c4e111d7b
+            title: Closed Opps Count previous quarter
+      localIdentifier: tertiary_measures
+    - items:
+        - attribute:
+            displayForm:
+              identifier:
+                id: user_name
+                type: label
+            localIdentifier: 5d840bb22fb3442ab64dcc3f74645e37
+      localIdentifier: view
+  filters: []
+  properties: {}
+  sorts: []
+  version: '2'
+  visualizationUrl: local:bullet
+description: ''
+id: c2535f71-9efb-4b4d-b77c-46abf557f219
+title: Reps goals - Opptys

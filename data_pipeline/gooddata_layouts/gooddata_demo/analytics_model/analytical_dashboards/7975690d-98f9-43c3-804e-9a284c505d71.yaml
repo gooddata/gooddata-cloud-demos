@@ -24,6 +24,7 @@ content:
                 identifier:
                   id: fbda26e5-2010-4e36-9617-2b3148651554
                   type: visualizationObject
+              properties: {}
               title: Lead Created Trend
               type: insight
           - size:
@@ -43,6 +44,7 @@ content:
                 identifier:
                   id: 71f38018-2623-4377-b1fc-6c597ec08168
                   type: visualizationObject
+              properties: {}
               title: Opportunities created trend
               type: insight
         type: IDashboardLayoutSection

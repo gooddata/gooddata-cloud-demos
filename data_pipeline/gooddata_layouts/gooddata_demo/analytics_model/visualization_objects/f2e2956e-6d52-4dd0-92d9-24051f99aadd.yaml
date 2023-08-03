@@ -2,41 +2,33 @@ content:
   buckets:
     - items:
         - measure:
-            alias: '#of Opportunities'
+            alias: Count of Opportunities
             definition:
               measureDefinition:
                 aggregation: count
+                computeRatio: false
                 filters: []
                 item:
                   identifier:
                     id: opportunity_id
                     type: attribute
             format: '#,##0'
-            localIdentifier: 610b9decf30f4c7280e7bd1f47750417
+            localIdentifier: a7d6639fbc7245539e460018bdd2a9bf
             title: Count of Opportunity ID
       localIdentifier: measures
-    - items:
-        - attribute:
-            alias: Created Date
-            displayForm:
-              identifier:
-                id: created_date.month
-                type: label
-            localIdentifier: e187024dbccf4c68ae0fc1ffeaf539ca
-      localIdentifier: view
     - items:
         - attribute:
             displayForm:
               identifier:
                 id: opportunity_stage
                 type: label
-            localIdentifier: d014d66096fe445a85a526ea8d47dc68
-      localIdentifier: stack
+            localIdentifier: 59ef7964593c44e8aae69b6bd03834e9
+      localIdentifier: view
   filters: []
   properties: {}
   sorts: []
   version: '2'
-  visualizationUrl: local:column
+  visualizationUrl: local:pie
 description: ''
-id: 71f38018-2623-4377-b1fc-6c597ec08168
-title: Opportunities created trend
+id: f2e2956e-6d52-4dd0-92d9-24051f99aadd
+title: Opportunity Stages

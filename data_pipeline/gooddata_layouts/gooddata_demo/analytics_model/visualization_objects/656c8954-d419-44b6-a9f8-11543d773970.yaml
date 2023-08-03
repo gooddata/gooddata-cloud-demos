@@ -1,0 +1,59 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            definition:
+              measureDefinition:
+                filters: []
+                item:
+                  identifier:
+                    id: revenue_closed
+                    type: metric
+            format: $#,##0.00
+            localIdentifier: 173064f7a46f447e96f04ca22f37ff52
+            title: Revenue closed
+      localIdentifier: measures
+    - items:
+        - measure:
+            definition:
+              measureDefinition:
+                aggregation: sum
+                filters: []
+                item:
+                  identifier:
+                    id: revenuegoal
+                    type: fact
+            format: $#,##0.00
+            localIdentifier: eaee22c63301477ca90d61155b5e0c4a
+            title: Sum of Revenuegoal
+      localIdentifier: secondary_measures
+    - items:
+        - measure:
+            definition:
+              measureDefinition:
+                aggregation: sum
+                filters: []
+                item:
+                  identifier:
+                    id: revenuegoal
+                    type: fact
+            format: $#,##0.00
+            localIdentifier: df167672f20f46dfa0d1c236cefd8b0d
+            title: Sum of Revenuegoal
+      localIdentifier: tertiary_measures
+    - items:
+        - attribute:
+            displayForm:
+              identifier:
+                id: user_name
+                type: label
+            localIdentifier: 399d5db049fb4b6c9fa3f4e465ff02fc
+      localIdentifier: view
+  filters: []
+  properties: {}
+  sorts: []
+  version: '2'
+  visualizationUrl: local:bullet
+description: ''
+id: 656c8954-d419-44b6-a9f8-11543d773970
+title: Closed Revenue Goal

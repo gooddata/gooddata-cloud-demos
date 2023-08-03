@@ -1,0 +1,39 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            alias: Opttys Won
+            definition:
+              measureDefinition:
+                filters: []
+                item:
+                  identifier:
+                    id: closed_opps_count
+                    type: metric
+            format: '#,##0'
+            localIdentifier: 34c9456fc57648e1b21661190824e241
+            title: Closed Opps Count
+      localIdentifier: measures
+    - items:
+        - measure:
+            alias: Opttys Won Goal
+            definition:
+              measureDefinition:
+                aggregation: sum
+                filters: []
+                item:
+                  identifier:
+                    id: closedgoal
+                    type: fact
+            format: '#,##0'
+            localIdentifier: 59f0676f93d5427b8b4b9cb53bfc753f
+            title: Sum of Closedgoal
+      localIdentifier: secondary_measures
+  filters: []
+  properties: {}
+  sorts: []
+  version: '2'
+  visualizationUrl: local:headline
+description: ''
+id: b807eb27-1d56-446e-8376-e1cf8d45f3b4
+title: Opptys Goal

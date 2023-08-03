@@ -6,8 +6,10 @@ There are two variants how the demo can work:
 2. Cloud experience where GoodData Cloud is used together with your own Snowflake database
 ![alt text](https://github.com/gooddata/gooddata-cloud-demos/blob/master/traffic_schema.png)
 
+The demo contains demonstration of enriching the data as well - there is directory `data_pipeline/data` hosting the files - for your use case you may want to update the file `goals.csv` with your actual numbers. There is also file to change real names of Salesforce users for dummy ones. Feel free to use it as well.
+
 ## Set up environment
-Prepare and activate virtual environment for running tools. 
+Prepare and activate virtual environment for running tools.
 (There may occur some dependecy errors that do not block solution operations. Please check final status of the jobs, if success is reported it usually means no action is needed)
 ```shell
 # Create virtualenv and install dependencies
@@ -111,8 +113,8 @@ pip install --upgrade snowplow-tracker
 ```shell
 export TARGET_SCHEMA="${INPUT_SCHEMA_SFDC}"
 meltano --environment $ELT_ENVIRONMENT run tap-salesforce $MELTANO_TARGET
-# Run full refresh, refreshes data in target where 'last_modified_date' of source >= start_date of tap in meltano.yml
-meltano --environment $ELT_ENVIRONMENT run tap-salesforce $MELTANO_TARGET --full-refresh
+meltano --environment $ELT_ENVIRONMENT run tap-csv $MELTANO_TARGET
+
 ```
 
 ### Transform

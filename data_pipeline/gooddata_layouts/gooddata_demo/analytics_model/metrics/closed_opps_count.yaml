@@ -1,0 +1,6 @@
+content:
+  format: '#,##0.00'
+  maql: SELECT COUNT({label/opportunity_id}) WHERE {label/is_won} IN ("true")
+description: ''
+id: closed_opps_count
+title: Closed Opps Count

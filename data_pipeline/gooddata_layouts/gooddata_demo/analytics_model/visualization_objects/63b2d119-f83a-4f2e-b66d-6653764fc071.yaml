@@ -2,7 +2,7 @@ content:
   buckets:
     - items:
         - measure:
-            alias: Opportunities Amount
+            alias: Won Amount
             definition:
               measureDefinition:
                 aggregation: sum
@@ -13,22 +13,31 @@ content:
                     id: opportunity_amount
                     type: fact
             format: $#,##0.00
-            localIdentifier: fb49941cc5b14e88a389263b414fab49
+            localIdentifier: f5fe730a9d8542869da1d545bedaee8f
             title: Sum of Opportunity amount
       localIdentifier: measures
     - items:
         - attribute:
+            alias: Close Date
             displayForm:
               identifier:
-                id: opportunity_stage
+                id: close_date.month
                 type: label
-            localIdentifier: 1f435c9742a3465ba64bb13230437052
+            localIdentifier: f80b4d5b79704995a9feebbc254efc6b
       localIdentifier: view
-  filters: []
+  filters:
+    - positiveAttributeFilter:
+        displayForm:
+          identifier:
+            id: is_won
+            type: label
+        in:
+          values:
+            - 'true'
   properties: {}
   sorts: []
   version: '2'
   visualizationUrl: local:column
 description: ''
-id: ee554505-d7ee-43ba-9615-43d8fddf9697
-title: Opportunities Amount By Stage
+id: 63b2d119-f83a-4f2e-b66d-6653764fc071
+title: Won Opptys Trend

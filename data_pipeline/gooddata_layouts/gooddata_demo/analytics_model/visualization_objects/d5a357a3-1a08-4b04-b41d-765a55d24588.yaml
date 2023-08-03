@@ -1,0 +1,60 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            alias: Revenue won
+            definition:
+              measureDefinition:
+                filters: []
+                item:
+                  identifier:
+                    id: revenue_closed
+                    type: metric
+            format: $#,##0.00
+            localIdentifier: ff4bf698bb384ef294ccd581dc633542
+            title: Revenue closed
+      localIdentifier: measures
+    - items:
+        - measure:
+            definition:
+              measureDefinition:
+                aggregation: sum
+                filters: []
+                item:
+                  identifier:
+                    id: revenuegoal
+                    type: fact
+            format: $#,##0.00
+            localIdentifier: 87386c1b59464230b980913d58c4e50f
+            title: Sum of Revenuegoal
+      localIdentifier: secondary_measures
+    - items:
+        - measure:
+            alias: Revenue previous previous quarter
+            definition:
+              measureDefinition:
+                filters: []
+                item:
+                  identifier:
+                    id: revenue_closed_previous_quarter
+                    type: metric
+            format: $#,##0.00
+            localIdentifier: 87a5401297184dfdbe1e44a48dcfa394
+            title: Revenue closed previous quarter
+      localIdentifier: tertiary_measures
+    - items:
+        - attribute:
+            displayForm:
+              identifier:
+                id: user_name
+                type: label
+            localIdentifier: 79924552f90b4acf90fca5dd529d4cdf
+      localIdentifier: view
+  filters: []
+  properties: {}
+  sorts: []
+  version: '2'
+  visualizationUrl: local:bullet
+description: ''
+id: d5a357a3-1a08-4b04-b41d-765a55d24588
+title: Reps Goals - Revenue

@@ -11,6 +11,7 @@ with oppty as (
   from {{ var("sfdc_input_schema") }}.opportunity
 ),
 
+
 final as (
   select
     Id as opportunity_id,
@@ -21,7 +22,10 @@ final as (
     OwnerId as opportunity_owner_id,
     accountid as account_id,
     stagename as opportunity_stage,
-    amount::numeric as opportunity_amount
+    amount::numeric(16,2) as opportunity_amount,
+    isClosed as is_closed,
+    isWon as is_won,
+    closedate as snapshot
   from oppty
 )
 

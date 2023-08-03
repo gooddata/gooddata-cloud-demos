@@ -5,12 +5,12 @@ project_id: gooddata-demo-analytics-v1
 environments:
 - name: dev_local
   env:
-    START_DATE: "2023-01-01T00:00:00Z"
-    SALESFORCE_SANDBOX: "true"
+    START_DATE: '2023-01-01T00:00:00Z'
+    SALESFORCE_SANDBOX: 'true'
 - name: dev_cloud
   env:
-    START_DATE: "2023-01-01T00:00:00Z"
-    SALESFORCE_SANDBOX: "true"
+    START_DATE: '2022-09-30T00:00:00Z'
+    SALESFORCE_SANDBOX: 'true'
 plugins:
   extractors:
   - name: tap-salesforce
@@ -20,37 +20,15 @@ plugins:
       api_type: BULK
       is_sandbox: ${SALESFORCE_SANDBOX}
       select_fields_by_default: false
-      start_date: "2022-01-01T00:00:00Z"
+      start_date: '2022-01-01T00:00:00Z'
       streams_to_discover:
-        - Account
-        - Lead
-        - LeadHistory
-        - Contact
-        - ContactHistory
-        - Opportunity
-        - OpportunityHistory
-        - OpportunityFieldHistory
-        - OpportunityContactRole
-        - User
-        - UserRole
-        - Event
-        - Task
-    schema:
-      LeadHistory:
-        NewValue:
-          type: [ "string", "null" ]
-        OldValue:
-          type: [ "string", "null" ]
-      ContactHistory:
-        NewValue:
-          type: [ "string", "null" ]
-        OldValue:
-          type: [ "string", "null" ]
-      OpportunityFieldHistory:
-        NewValue:
-          type: [ "string", "null" ]
-        OldValue:
-          type: [ "string", "null" ]
+      - Account
+      - Lead
+      - Contact
+      - Opportunity
+      - OpportunityContactRole
+      - User
+      - UserRole
     select:
     - Account.Id
     - Account.IsDeleted
@@ -59,6 +37,8 @@ plugins:
     - Account.OwnerId
     - Lead.Id
     - Lead.AccountId
+    - Lead.Country
+    - Lead.CountryCode
     - Lead.IsDeleted
     - Lead.ConvertedContactId
     - Lead.Email
@@ -66,25 +46,17 @@ plugins:
     - Lead.ConvertedOpportunityId
     - Lead.OwnerId
     - Lead.Status
-    - LeadHistory.LeadId
-    - LeadHistory.CreatedDate
-    - LeadHistory.Field
-    - LeadHistory.NewValue
-    - LeadHistory.OldValue
     - Contact.Id
     - Contact.IsDeleted
     - Contact.Email
     - Contact.CreatedDate
     - Contact.AccountId
     - Contact.OwnerId
-    - ContactHistory.ContactId
-    - ContactHistory.CreatedDate
-    - ContactHistory.Field
-    - ContactHistory.NewValue
-    - ContactHistory.OldValue
     - Opportunity.Id
     - Opportunity.Amount
     - Opportunity.IsDeleted
+    - Opportunity.IsClosed
+    - Opportunity.IsWon
     - Opportunity.Name
     - Opportunity.StageName
     - Opportunity.CreatedDate
@@ -92,19 +64,6 @@ plugins:
     - Opportunity.OwnerId
     - Opportunity.AccountId
     - Opportunity.ForecastCategoryName
-    - OpportunityHistory.OpportunityId
-    - OpportunityHistory.CreatedDate
-    - OpportunityHistory.Field
-    - OpportunityFieldHistory.OpportunityId
-    - OpportunityFieldHistory.Field
-    - OpportunityFieldHistory.CreatedDate
-    - OpportunityFieldHistory.NewValue
-    - OpportunityFieldHistory.OldValue
-    - OpportunityContactRole.OpportunityId
-    - OpportunityContactRole.ContactId
-    - OpportunityContactRole.IsPrimary
-    - OpportunityContactRole.Role
-    - OpportunityContactRole.CreatedDate
     - User.Id
     - User.Name
     - User.UserRoleId
@@ -113,20 +72,12 @@ plugins:
     - User.IsActive
     - UserRole.Id
     - UserRole.Name
-    - Event.Id
-    - Event.Type
-    - Event.OwnerId
-    - Event.Subject
-    - Event.WhoId
-    - Event.CreatedDate
-    - Event.WhatId
-    - Task.Id
-    - Task.OwnerId
-    - Task.Subject
-    - Task.WhoId
-    - Task.Status
-    - Task.CreatedDate
-    - Task.WhatId
+  - name: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+    config:
+      add_metadata_columns: false
+      csv_files_definition: data/schema.json
   loaders:
   - name: target-jsonl
     variant: andyh1203

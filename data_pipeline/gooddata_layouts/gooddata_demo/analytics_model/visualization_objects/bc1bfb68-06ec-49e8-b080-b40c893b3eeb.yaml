@@ -1,0 +1,39 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            alias: Revenue Won
+            definition:
+              measureDefinition:
+                filters: []
+                item:
+                  identifier:
+                    id: revenue_closed
+                    type: metric
+            format: $#,##0.00
+            localIdentifier: af19e9d8317940d48902302e6c70902b
+            title: Revenue closed
+      localIdentifier: measures
+    - items:
+        - measure:
+            alias: Revenue Goal
+            definition:
+              measureDefinition:
+                aggregation: sum
+                filters: []
+                item:
+                  identifier:
+                    id: revenuegoal
+                    type: fact
+            format: $#,##0.00
+            localIdentifier: bbb143b8a74a4053b38eaa1edfa29eee
+            title: Sum of Revenuegoal
+      localIdentifier: secondary_measures
+  filters: []
+  properties: {}
+  sorts: []
+  version: '2'
+  visualizationUrl: local:headline
+description: ''
+id: bc1bfb68-06ec-49e8-b080-b40c893b3eeb
+title: Revenue Goal

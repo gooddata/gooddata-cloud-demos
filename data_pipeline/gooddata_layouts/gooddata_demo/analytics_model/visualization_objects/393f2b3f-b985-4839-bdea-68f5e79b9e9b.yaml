@@ -1,0 +1,47 @@
+content:
+  buckets:
+    - items:
+        - attribute:
+            displayForm:
+              identifier:
+                id: lead_email
+                type: label
+            localIdentifier: 472905ce1a66491f8688c58da1888377
+        - attribute:
+            displayForm:
+              identifier:
+                id: lead_status
+                type: label
+            localIdentifier: 1650b8b472434bc6b45658958588b6ea
+        - attribute:
+            displayForm:
+              identifier:
+                id: lead_country_name
+                type: label
+            localIdentifier: 68b4b60386474930a26269f8379265a0
+        - attribute:
+            alias: Created
+            displayForm:
+              identifier:
+                id: created_date.day
+                type: label
+            localIdentifier: cb1627b89d7248c8b6c7dee56cd1dfb8
+        - attribute:
+            alias: Owner
+            displayForm:
+              identifier:
+                id: user_name
+                type: label
+            localIdentifier: a3db56528c4640ecb7f7d940316ff148
+      localIdentifier: attribute
+  filters: []
+  properties: {}
+  sorts:
+    - attributeSortItem:
+        attributeIdentifier: 472905ce1a66491f8688c58da1888377
+        direction: asc
+  version: '2'
+  visualizationUrl: local:table
+description: ''
+id: 393f2b3f-b985-4839-bdea-68f5e79b9e9b
+title: Lead Details

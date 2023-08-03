@@ -6,6 +6,9 @@ plugins:
   - name: tap-salesforce
     variant: meltanolabs
     pip_url: git+https://github.com/MeltanoLabs/tap-salesforce.git
+  - name: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
   loaders:
   - name: target-jsonl
     variant: andyh1203

@@ -1,0 +1,6 @@
+content:
+  format: '#,##0.00'
+  maql: SELECT SUM({fact/opportunity_amount}) WHERE {label/is_won} IN ("true")
+description: ''
+id: revenue_closed
+title: Revenue closed

@@ -1,0 +1,7 @@
+content:
+  format: '#,##0.00'
+  maql: 'SELECT COUNT({label/opportunity_id}) FOR PREVIOUS({label/snapshot.quarter})
+    WHERE {label/is_won} IN ("true") '
+description: ''
+id: closed_opps_count_previous_quarter
+title: Closed Opps Count previous quarter

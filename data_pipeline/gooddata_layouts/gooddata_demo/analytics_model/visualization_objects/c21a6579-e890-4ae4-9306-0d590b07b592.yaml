@@ -1,0 +1,59 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            definition:
+              measureDefinition:
+                filters: []
+                item:
+                  identifier:
+                    id: closed_opps_count
+                    type: metric
+            format: '#,##0'
+            localIdentifier: db35505203584db18cdeda4ac84e4a01
+            title: Closed Opps Count
+      localIdentifier: measures
+    - items:
+        - measure:
+            definition:
+              measureDefinition:
+                aggregation: sum
+                filters: []
+                item:
+                  identifier:
+                    id: closedgoal
+                    type: fact
+            format: '#,##0'
+            localIdentifier: 03821a352a59439ba907dc8a11a46078
+            title: Sum of Closedgoal
+      localIdentifier: secondary_measures
+    - items:
+        - measure:
+            definition:
+              measureDefinition:
+                aggregation: sum
+                filters: []
+                item:
+                  identifier:
+                    id: closedgoal
+                    type: fact
+            format: '#,##0'
+            localIdentifier: c235b1fb97e44ec68cc8160cf0270d52
+            title: Sum of Closedgoal
+      localIdentifier: tertiary_measures
+    - items:
+        - attribute:
+            displayForm:
+              identifier:
+                id: user_name
+                type: label
+            localIdentifier: 399d5db049fb4b6c9fa3f4e465ff02fc
+      localIdentifier: view
+  filters: []
+  properties: {}
+  sorts: []
+  version: '2'
+  visualizationUrl: local:bullet
+description: ''
+id: c21a6579-e890-4ae4-9306-0d590b07b592
+title: Closed Counts Goal

@@ -2,28 +2,27 @@ content:
   buckets:
     - items:
         - measure:
-            alias: Leads
+            alias: Won Opptys
             definition:
               measureDefinition:
-                aggregation: count
                 computeRatio: false
                 filters: []
                 item:
                   identifier:
-                    id: lead_id
-                    type: attribute
+                    id: closed_opps_count
+                    type: metric
             format: '#,##0'
-            localIdentifier: a237adf16b4b49e7a2249bb3ce31cdd3
-            title: Count of Lead ID
+            localIdentifier: c646138a523b46faad2e12d83600b303
+            title: Closed Opps Count
       localIdentifier: measures
     - items:
         - attribute:
-            alias: Created Date
+            alias: Close Date
             displayForm:
               identifier:
-                id: created_date.month
+                id: close_date.month
                 type: label
-            localIdentifier: d42eaf16c9594a28ae44daba7477d0e8
+            localIdentifier: e187024dbccf4c68ae0fc1ffeaf539ca
       localIdentifier: view
   filters: []
   properties: {}
@@ -31,5 +30,5 @@ content:
   version: '2'
   visualizationUrl: local:column
 description: ''
-id: fbda26e5-2010-4e36-9617-2b3148651554
-title: Lead Created Trend
+id: c051f62f-7781-44d8-9493-9a970eb6e58b
+title: Opportunities won trend

@@ -1,0 +1,7 @@
+content:
+  format: '#,##0.00'
+  maql: "SELECT SUM({fact/opportunity_amount}) \nFOR PREVIOUS({label/snapshot.quarter})\
+    \ \nWHERE {label/is_won} IN (\"true\") \n"
+description: ''
+id: revenue_closed_previous_quarter
+title: Revenue closed previous quarter

@@ -24,6 +24,7 @@ content:
                 identifier:
                   id: 9fd45a49-63e4-49d9-808b-52404fd0397b
                   type: visualizationObject
+              properties: {}
               title: Total Opportunities Amount
               type: insight
           - size:
@@ -43,7 +44,28 @@ content:
                 identifier:
                   id: ee554505-d7ee-43ba-9615-43d8fddf9697
                   type: visualizationObject
+              properties: {}
               title: Opportunities Amount By Stage
+              type: insight
+          - size:
+              xl:
+                gridHeight: 22
+                gridWidth: 4
+            type: IDashboardLayoutItem
+            widget:
+              dateDataSet:
+                identifier:
+                  id: close_date
+                  type: dataset
+              description: ''
+              drills: []
+              ignoreDashboardFilters: []
+              insight:
+                identifier:
+                  id: f2e2956e-6d52-4dd0-92d9-24051f99aadd
+                  type: visualizationObject
+              properties: {}
+              title: Opportunity Stages
               type: insight
           - size:
               xl:
@@ -70,4 +92,4 @@ content:
   version: '2'
 description: ''
 id: e1a1622d-93a8-4d72-8c53-ce1db576cc96
-title: 3. Opportunities
+title: 1. Opportunities

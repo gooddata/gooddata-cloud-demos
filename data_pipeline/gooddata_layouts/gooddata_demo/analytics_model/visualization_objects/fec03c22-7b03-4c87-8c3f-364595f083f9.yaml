@@ -2,34 +2,31 @@ content:
   buckets:
     - items:
         - measure:
-            alias: Leads
             definition:
               measureDefinition:
                 aggregation: count
-                computeRatio: false
                 filters: []
                 item:
                   identifier:
-                    id: lead_id
+                    id: account_id
                     type: attribute
             format: '#,##0'
-            localIdentifier: a237adf16b4b49e7a2249bb3ce31cdd3
-            title: Count of Lead ID
+            localIdentifier: 3f0ada8c49c1416d940ee9ff5752e124
+            title: Count of Account ID
       localIdentifier: measures
     - items:
         - attribute:
-            alias: Created Date
             displayForm:
               identifier:
-                id: created_date.month
+                id: account_type
                 type: label
-            localIdentifier: d42eaf16c9594a28ae44daba7477d0e8
+            localIdentifier: 2cc9e918bf884d669718def76c9bbb69
       localIdentifier: view
   filters: []
   properties: {}
   sorts: []
   version: '2'
-  visualizationUrl: local:column
+  visualizationUrl: local:pie
 description: ''
-id: fbda26e5-2010-4e36-9617-2b3148651554
-title: Lead Created Trend
+id: fec03c22-7b03-4c87-8c3f-364595f083f9
+title: Account Types
