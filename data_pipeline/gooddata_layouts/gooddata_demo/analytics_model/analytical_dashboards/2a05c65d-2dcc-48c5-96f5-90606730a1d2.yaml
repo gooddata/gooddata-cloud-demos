@@ -1,91 +1,97 @@
 content:
   filterContextRef:
     identifier:
-      id: 5452a44e-5b34-4b6a-b6d4-7e1f2430d628
+      id: d9eb40a7-2d2d-4966-ae53-85e35013e2ad
       type: filterContext
   layout:
     sections:
       - header:
-          title: Users and roles Summary
+          description: Goals attainment for selected quarter in absolute numbers.
+          title: Quarterly Goals
         items:
           - size:
               xl:
-                gridHeight: 22
-                gridWidth: 6
+                gridHeight: 11
+                gridWidth: 2
             type: IDashboardLayoutItem
             widget:
               dateDataSet:
                 identifier:
                   id: snapshot
                   type: dataset
-              description: ''
-              drills:
-                - origin:
-                    attribute:
-                      localIdentifier: 79924552f90b4acf90fca5dd529d4cdf
-                    type: drillFromAttribute
-                  target:
-                    identifier:
-                      id: 2a05c65d-2dcc-48c5-96f5-90606730a1d2
-                      type: analyticalDashboard
-                  transition: in-place
-                  type: drillToDashboard
-              ignoreDashboardFilters: []
-              insight:
-                identifier:
-                  id: d5a357a3-1a08-4b04-b41d-765a55d24588
-                  type: visualizationObject
-              properties: {}
-              title: Reps Goals - Revenue
-              type: insight
-          - size:
-              xl:
-                gridHeight: 22
-                gridWidth: 6
-            type: IDashboardLayoutItem
-            widget:
-              dateDataSet:
-                identifier:
-                  id: snapshot
-                  type: dataset
-              description: ''
-              drills:
-                - origin:
-                    attribute:
-                      localIdentifier: 5d840bb22fb3442ab64dcc3f74645e37
-                    type: drillFromAttribute
-                  target:
-                    identifier:
-                      id: 2a05c65d-2dcc-48c5-96f5-90606730a1d2
-                      type: analyticalDashboard
-                  transition: in-place
-                  type: drillToDashboard
-              ignoreDashboardFilters: []
-              insight:
-                identifier:
-                  id: c2535f71-9efb-4b4d-b77c-46abf557f219
-                  type: visualizationObject
-              properties: {}
-              title: Reps goals - Opptys
-              type: insight
-        type: IDashboardLayoutSection
-      - header: {}
-        items:
-          - size:
-              xl:
-                gridHeight: 22
-                gridWidth: 6
-            type: IDashboardLayoutItem
-            widget:
               description: ''
               drills: []
               ignoreDashboardFilters: []
               insight:
                 identifier:
-                  id: 63b2d119-f83a-4f2e-b66d-6653764fc071
+                  id: bc1bfb68-06ec-49e8-b080-b40c893b3eeb
                   type: visualizationObject
               properties: {}
-              title: Won Opptys Trend
+              title: Revenue Goal
+              type: insight
+          - size:
+              xl:
+                gridHeight: 11
+                gridWidth: 2
+            type: IDashboardLayoutItem
+            widget:
+              dateDataSet:
+                identifier:
+                  id: snapshot
+                  type: dataset
+              description: ''
+              drills: []
+              ignoreDashboardFilters: []
+              insight:
+                identifier:
+                  id: b807eb27-1d56-446e-8376-e1cf8d45f3b4
+                  type: visualizationObject
+              properties: {}
+              title: Opptys Goal
+              type: insight
+        type: IDashboardLayoutSection
+      - header:
+          title: Trends
+        items:
+          - size:
+              xl:
+                gridHeight: 11
+                gridWidth: 2
+            type: IDashboardLayoutItem
+            widget:
+              dateDataSet:
+                identifier:
+                  id: close_date
+                  type: dataset
+              description: ''
+              drills: []
+              ignoreDashboardFilters: []
+              insight:
+                identifier:
+                  id: ef8ff104-3788-43a1-92ec-8eb630f0930b
+                  type: visualizationObject
+              properties: {}
+              title: Won Revenue
+              type: insight
+          - size:
+              xl:
+                gridHeight: 11
+                gridWidth: 2
+            type: IDashboardLayoutItem
+            widget:
+              dateDataSet:
+                identifier:
+                  id: close_date
+                  type: dataset
+              description: ''
+              drills: []
+              ignoreDashboardFilters: []
+              insight:
+                identifier:
+                  id: 2767064e-00f2-4f58-a316-dc350a184d10
+                  type: visualizationObject
+              properties: {}
+              title: Won Opptys
               type: insight
           - size:
               xl:
@@ -103,9 +109,6 @@ content:
               properties: {}
               title: Opportunities won trend
               type: insight
-        type: IDashboardLayoutSection
-      - header: {}
-        items:
           - size:
               xl:
                 gridHeight: 22
@@ -117,10 +120,10 @@ content:
               ignoreDashboardFilters: []
               insight:
                 identifier:
-                  id: 0cb3f7b3-9bd9-4bd2-aae9-042dba4576b9
+                  id: 618c0d45-0239-46a2-aa90-fbcc0d6baa55
                   type: visualizationObject
               properties: {}
-              title: Roles and Users
+              title: Currently Open Opportunities Stages
               type: insight
           - size:
               xl:
@@ -133,47 +136,38 @@ content:
               ignoreDashboardFilters: []
               insight:
                 identifier:
-                  id: 496486f7-667c-42b8-996b-660fde7dcff0
+                  id: 6c32525e-0bfa-46ba-a5c8-a301cd218c4e
                   type: visualizationObject
               properties: {}
-              title: Account Owners
+              title: Currently Open Opptys Value
               type: insight
         type: IDashboardLayoutSection
-      - header: {}
+      - header:
+          title: Details
         items:
           - size:
               xl:
-                gridHeight: 40
+                gridHeight: 22
                 gridWidth: 12
             type: IDashboardLayoutItem
             widget:
               dateDataSet:
                 identifier:
-                  id: created_date
+                  id: close_date
                   type: dataset
               description: ''
-              drills:
-                - origin:
-                    measure:
-                      localIdentifier: 6536e2b08d574d1cb2fc3f7a23e77afb
-                    type: drillFromMeasure
-                  target:
-                    identifier:
-                      id: 393f2b3f-b985-4839-bdea-68f5e79b9e9b
-                      type: visualizationObject
-                  transition: pop-up
-                  type: drillToInsight
+              drills: []
               ignoreDashboardFilters: []
               insight:
                 identifier:
-                  id: 3ed4bf9a-a6a1-48a7-a27d-9a2ec5534766
+                  id: fe398c22-110d-4ac5-8d60-0adf697173b8
                   type: visualizationObject
               properties: {}
-              title: Leads location
+              title: Account - Opportunity
               type: insight
         type: IDashboardLayoutSection
     type: IDashboardLayout
   version: '2'
 description: ''
-id: 773204c2-c018-43e1-adf5-71a1f4764b6d
-title: 3. Reps
+id: 2a05c65d-2dcc-48c5-96f5-90606730a1d2
+title: Reps Detail

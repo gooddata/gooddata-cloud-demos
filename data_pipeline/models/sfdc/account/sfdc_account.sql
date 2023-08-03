@@ -12,7 +12,7 @@ with account as (
 final as (
   select
     id as account_id,
-    name as account_name,
+    {{ compliance_mask_name('name')}} as account_name,
     type as account_type,
     OwnerId as account_owner_id
   from account

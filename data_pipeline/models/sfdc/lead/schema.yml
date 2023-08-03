@@ -25,3 +25,17 @@ models:
       - name: created_date
       - name: converted_opportunity_id
       - name: lead_status
+      - name: lead_country_code
+      - name: lead_country_name
+      - name: latitude
+        meta:
+          gooddata:
+            ldm_type: label
+            label_type: GEO_LATITUDE
+            attribute_column: lead_country_name
+      - name: longitude
+        meta:
+          gooddata:
+            ldm_type: label
+            label_type: GEO_LONGITUDE
+            attribute_column: lead_country_name

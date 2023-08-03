@@ -1,9 +1,9 @@
 content:
   filters:
     - dateFilter:
-        from: 0
+        from: -1
         granularity: GDC.time.quarter
-        to: 0
+        to: -1
         type: relative
     - attributeFilter:
         attributeElements:
@@ -12,10 +12,9 @@ content:
           identifier:
             id: user_name
             type: label
-        localIdentifier: 0faa64507ad14a2abb8944bdf5f2d02c
+        localIdentifier: bf7a7af889c04bc1a38d562e814fb78c
         negativeSelection: true
-        title: Owner
   version: '2'
 description: ''
-id: c585b88b-d301-46d2-9f56-742dab9422b5
+id: d9eb40a7-2d2d-4966-ae53-85e35013e2ad
 title: filterContext

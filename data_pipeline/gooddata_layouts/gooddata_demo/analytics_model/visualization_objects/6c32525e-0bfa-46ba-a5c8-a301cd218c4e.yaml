@@ -2,7 +2,6 @@ content:
   buckets:
     - items:
         - measure:
-            alias: Opportunities Amount
             definition:
               measureDefinition:
                 aggregation: sum
@@ -13,22 +12,33 @@ content:
                     id: opportunity_amount
                     type: fact
             format: $#,##0.00
-            localIdentifier: fb49941cc5b14e88a389263b414fab49
+            localIdentifier: 4188465a94e44ea294d870feb3a640d6
             title: Sum of Opportunity amount
       localIdentifier: measures
     - items:
         - attribute:
             displayForm:
               identifier:
-                id: opportunity_stage
+                id: opportunity_name
                 type: label
-            localIdentifier: 1f435c9742a3465ba64bb13230437052
+            localIdentifier: 7574ca9664fb42d9b5adcf079c8bd0c2
       localIdentifier: view
-  filters: []
-  properties: {}
+  filters:
+    - positiveAttributeFilter:
+        displayForm:
+          identifier:
+            id: is_closed
+            type: label
+        in:
+          values:
+            - 'false'
+  properties:
+    controls:
+      dataLabels:
+        visible: auto
   sorts: []
   version: '2'
-  visualizationUrl: local:column
+  visualizationUrl: local:treemap
 description: ''
-id: ee554505-d7ee-43ba-9615-43d8fddf9697
-title: Opportunities Amount By Stage
+id: 6c32525e-0bfa-46ba-a5c8-a301cd218c4e
+title: Open Opptys Value

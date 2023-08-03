@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: sfdc_goals
+    description: "Goals"
+    meta:
+      gooddata:
+        model_id: sfdc
+    columns:
+      - name: snapshot
+      - name: UserID
+        description: "User ID"
+        meta:
+          gooddata:
+            ldm_type: reference
+            referenced_table: sfdc_user
+      - name: RevenueGoal
+      - name: ClosedGoal

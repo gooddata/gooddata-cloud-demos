@@ -1,0 +1,38 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            alias: Won Opptys Count
+            definition:
+              measureDefinition:
+                filters: []
+                item:
+                  identifier:
+                    id: closed_opps_count
+                    type: metric
+            format: '#,##0'
+            localIdentifier: 3e802ffc78e7412e9d49d2ff288e0edd
+            title: Closed Opps Count
+      localIdentifier: measures
+    - items:
+        - measure:
+            alias: Won Opptys Previous Quarter
+            definition:
+              measureDefinition:
+                filters: []
+                item:
+                  identifier:
+                    id: closed_opps_count_previous_quarter
+                    type: metric
+            format: '#,##0'
+            localIdentifier: 182e7f73bd524dd1a4b9e8e7488a1286
+            title: Closed Opps Count previous quarter
+      localIdentifier: secondary_measures
+  filters: []
+  properties: {}
+  sorts: []
+  version: '2'
+  visualizationUrl: local:headline
+description: ''
+id: 2767064e-00f2-4f58-a316-dc350a184d10
+title: Won Opptys

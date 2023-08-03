@@ -31,3 +31,6 @@ models:
       - name: forecast_category
       - name: opportunity_stage
       - name: opportunity_amount
+      - name: is_closed
+      - name: is_won
+      - name: snapshot

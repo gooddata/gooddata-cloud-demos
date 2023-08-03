@@ -1,0 +1,17 @@
+[
+      {
+        "entity": "country_geo",
+        "path": "data/country_geo.csv",
+        "keys": ["COUNTRY_CODE"]
+      },
+      {
+        "entity": "goals",
+        "path": "data/goals.csv",
+        "keys": ["UserID","Quarter"]
+      },
+      {
+        "entity": "names",
+        "path": "data/names.csv",
+        "keys": ["realName"]
+      }
+]

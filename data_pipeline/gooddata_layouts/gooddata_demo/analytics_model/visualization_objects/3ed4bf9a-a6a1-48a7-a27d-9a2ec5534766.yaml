@@ -1,0 +1,40 @@
+content:
+  buckets:
+    - items:
+        - attribute:
+            displayForm:
+              identifier:
+                id: latitude
+                type: label
+            localIdentifier: 020d98a4f02c42518fc136aca5373b14
+      localIdentifier: location
+    - items:
+        - measure:
+            definition:
+              measureDefinition:
+                aggregation: count
+                filters: []
+                item:
+                  identifier:
+                    id: lead_id
+                    type: attribute
+            format: '#,##0'
+            localIdentifier: 6536e2b08d574d1cb2fc3f7a23e77afb
+            title: Count of Lead ID
+      localIdentifier: size
+  filters: []
+  properties:
+    controls:
+      latitude: latitude
+      longitude: longitude
+      points:
+        groupNearbyPoints: false
+      tooltipText: lead_country_name
+      viewport:
+        area: continent_eu
+  sorts: []
+  version: '2'
+  visualizationUrl: local:pushpin
+description: ''
+id: 3ed4bf9a-a6a1-48a7-a27d-9a2ec5534766
+title: Leads location

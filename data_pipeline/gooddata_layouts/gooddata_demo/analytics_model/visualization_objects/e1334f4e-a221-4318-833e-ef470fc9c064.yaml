@@ -1,0 +1,22 @@
+content:
+  buckets:
+    - items:
+        - measure:
+            definition:
+              measureDefinition:
+                filters: []
+                item:
+                  identifier:
+                    id: reached_3rd_milestone
+                    type: metric
+            localIdentifier: 75cdfda370ee49d58d9b37772f607d5a
+            title: Reached 3rd Milestone
+      localIdentifier: measures
+  filters: []
+  properties: {}
+  sorts: []
+  version: '2'
+  visualizationUrl: local:headline
+description: ''
+id: e1334f4e-a221-4318-833e-ef470fc9c064
+title: Leads Reached 3rd milestone
