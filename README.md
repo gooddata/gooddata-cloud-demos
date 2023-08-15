@@ -1,12 +1,6 @@
 # GoodData Demo project
 
 Target of this demo is to show how GoodData fits into the cloud ecosystem and provide demo on your own Salesforce data. The aim is the experience to be as smooth as possible, still customisable.
-There are two variants how the demo can work:
-1. Using fully local experience - dockerised GoodData Cloud Native with included Postgres database
-2. Cloud experience where GoodData Cloud is used together with your own Snowflake database
-![alt text](https://github.com/gooddata/gooddata-cloud-demos/blob/master/traffic_schema.png)
-
-The demo contains demonstration of enriching the data as well - there is directory `data_pipeline/data` hosting the files - for your use case you may want to update the file `goals.csv` with your actual numbers. There is also file to change real names of Salesforce users for dummy ones. Feel free to use it as well.
 
 ## Set up environment
 Prepare and activate virtual environment for running tools.
@@ -18,24 +12,10 @@ make dev # Creates virtual env
 source .venv/bin/activate
 ```
 
-## Run locally
 
-In this scenario, the solution consists of GoodData Cloud Native run within Docker. GD CN comes with included Postgres database so we do not need to worry with additional package.
-Data load from Salesforce is done using [Meltano](https://meltano.com/), for transformation [dbt](https://www.getdbt.com/) is used.
-To make it work, you need to provide credentials for your Salesforce instance - see the point about env file. You can either use username/password and security token authentication or OAuth.
+## Run in GoodData Cloud
 
-If you want to develop purely locally, use docker-compose:
-```shell
-docker-compose build
-# Start GoodData
-docker-compose up -d gooddata-cn-ce
-# Wait 1-2 minutes to let GoodData to fully start
-docker-compose up bootstrap_origins
-```
-
-## Run in cloud
-
-In this scenario, the solution consists of GoodData Cloud (you can register yourself for [GoodData Trial](https://www.gooddata.com/)). As a data source Snowflake is used. To make the solution work, you will need access to Snowflake warehouse, have database ready and have permissions to fully work with the database for your user.
+In the scenario, the solution consists of GoodData Cloud (you can register yourself for [GoodData Trial](https://www.gooddata.com/)). As a data source Snowflake is used. To make the solution work, you will need access to Snowflake warehouse, have database ready and have permissions to fully work with the database for your user.
 Data load from Salesforce is done using [Meltano](https://meltano.com/), for transformation [dbt](https://www.getdbt.com/) is used.
 To make it work, you need to provide credentials for your Salesforce instance - see the point about env file.
 
@@ -85,12 +65,7 @@ export SNOWFLAKE_DBNAME=gd_test
 export SNOWFLAKE_ACCOUNT="xxxx"
 export SNOWFLAKE_WAREHOUSE="xxxx"
 ```
-Once the credentials are set up, you need to activate the variables - in local use-case:
-```shell
-# Fill in missing configurations within .env file - there is .env.demo.local templated for local use-case
-source .env.demo.local
-```
-Or in cloud use-case:
+Once the credentials are set up, you need to activate the variables:
 ```shell
 # Fill in missing configurations within .env file - there is .env.demo.cloud templated for local use-case
 source .env.demo.cloud
@@ -113,8 +88,8 @@ pip install --upgrade snowplow-tracker
 ```shell
 export TARGET_SCHEMA="${INPUT_SCHEMA_SFDC}"
 meltano --environment $ELT_ENVIRONMENT run tap-salesforce $MELTANO_TARGET
-meltano --environment $ELT_ENVIRONMENT run tap-csv $MELTANO_TARGET
-
+# Run full refresh, refreshes data in target where 'last_modified_date' of source >= start_date of tap in meltano.yml
+meltano --environment $ELT_ENVIRONMENT run tap-salesforce $MELTANO_TARGET --full-refresh
 ```
 
 ### Transform
