@@ -1,6 +1,7 @@
 # GoodData Demo project
 
 Target of this demo is to show how GoodData fits into the cloud ecosystem and provide demo on your own Salesforce data. The aim is the experience to be as smooth as possible, still customisable.
+![alt text](https://github.com/gooddata/gooddata-cloud-demos/blob/master/deployment_schema.png)
 
 ## Set up environment
 Prepare and activate virtual environment for running tools.
@@ -35,7 +36,7 @@ CREATE OR REPLACE FILE FORMAT gd_test_demo.PUBLIC.MELTANO_FORMAT
 
 ## Run processes
 ### Fill in configuration
-All necessary configuration is stored within configuration files and the extent of needed interaction depends on the deployment variant you have chosen. In case of local environment, you will need to fill following section in ".env.demo.local" file:
+All necessary configuration is stored within configuration files. You will need to fill following section in ".env.demo.cloud" file:
 ```shell
 # Sensitive secrets to connect to sources, must be entered by you, cannot be committed to git
 export TAP_SALESFORCE_USERNAME="xxxx"
@@ -46,9 +47,9 @@ export TAP_SALESFORCE_SECURITY_TOKEN="xxxx"
 # export TAP_SALESFORCE_CLIENT_SECRET="xxxx"
 # export TAP_SALESFORCE_REFRESH_TOKEN="xxxx"
 ```
-You can use either username/password authentication or OAuth one.
+You can use either username/password authentication or OAuth one. The access token can be generated using [documentation](https://help.salesforce.com/s/articleView?id=sf.mc_pers_api_tokens_create.htm&type=5)
 
-In case you go with the cloud deployment variant, you will need to fill in ".env.demo.cloud" file. In addition to SFDC credentials as described above, you will also need to fill in credentials for you GoodDAta Cloud environment:
+In addition to SFDC credentials as described above, you will also need to fill in credentials for you GoodDAta Cloud environment:
 ```shell
 export GOODDATA_ENVIRONMENT_ID="development"
 export GOODDATA_UPPER_CASE="--gooddata-upper-case"
@@ -56,6 +57,7 @@ export GOODDATA_HOST="https://xxxx.on.cloud.gooddata.com"
 export GOODDATA_MODEL_IDS="sfdc"
 export GOODDATA_TOKEN="xxxx"
 ```
+[documentation](https://www.gooddata.com/developers/cloud-native/doc/cloud/getting-started/create-api-token/)
 And also you Snowflake credentials:
 ```shell
 export SNOWFLAKE_USER="xxxx"
