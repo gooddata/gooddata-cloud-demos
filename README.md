@@ -93,6 +93,12 @@ meltano --environment $ELT_ENVIRONMENT run tap-salesforce $MELTANO_TARGET
 # Run full refresh, refreshes data in target where 'last_modified_date' of source >= start_date of tap in meltano.yml
 meltano --environment $ELT_ENVIRONMENT run tap-salesforce $MELTANO_TARGET --full-refresh
 ```
+There are static files located in `data_pipeline/data` directory that are intended to enrich the data from Salesforce (there is file that is definyning Sales goals for Sales reps, there is a file defyning geo locations and file that can help you mask real user names). You can customise your files based on your needs.
+Run the files ingestion:
+
+```shell
+export TARGET_SCHEMA=input_schema_csv
+meltano --environment $ELT_ENVIRONMENT run tap-csv $MELTANO_TARGET --full-refresh
 
 ### Transform
 The example transformation used in the example aims to demonstrate basic work with data and preparation for publishing data within GoodData workspace.
