@@ -99,6 +99,7 @@ Run the files ingestion:
 ```shell
 export TARGET_SCHEMA=input_schema_csv
 meltano --environment $ELT_ENVIRONMENT run tap-csv $MELTANO_TARGET --full-refresh
+```
 
 ### Transform
 The example transformation used in the example aims to demonstrate basic work with data and preparation for publishing data within GoodData workspace.
