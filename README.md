@@ -97,7 +97,6 @@ There are static files located in `data_pipeline/data` directory that are intend
 Run the files ingestion:
 
 ```shell
-export TARGET_SCHEMA=input_schema_csv
 meltano --environment $ELT_ENVIRONMENT run tap-csv $MELTANO_TARGET --full-refresh
 ```
 
