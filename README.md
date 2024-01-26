@@ -120,12 +120,16 @@ dbt run --profiles-dir profile --target $ELT_ENVIRONMENT --full-refresh
 
 ### Generate GD LDM from dbt models
 ```shell
-dbt-gooddata deploy_models $GOODDATA_UPPER_CASE
+gooddata-dbt provision_workspaces
+gooddata-dbt register_data_sources --profiles-dir profile --target $ELT_ENVIRONMENT $GOODDATA_UPPER_CASE
+gooddata-dbt deploy_ldm --profiles-dir profile --target $ELT_ENVIRONMENT $GOODDATA_UPPER_CASE
+    # Invalidates GoodData caches
+gooddata-dbt upload_notification --profiles-dir profile
 ```
 
 ### Deliver analytics
 ```shell
-dbt-gooddata deploy_analytics $GOODDATA_UPPER_CASE
+gooddata-dbt deploy_analytics $GOODDATA_UPPER_CASE
 ```
 At this point you can see your analytics in GD - within your GoodData Cloud trial. Please note the analytics depends only on default Salesforce fields and therefore it is very basic, you can easily add your custom fields and enrich the analytics.
 
