@@ -12,7 +12,7 @@ environment_setups:
         elt_environment: prod
 
 data_products:
-  - id: gooddata_demo_g
+  - id: gooddata_demo
     name: New Demo WS
     environment_setup_id: default
     model_ids:
@@ -20,6 +20,6 @@ data_products:
 organizations:
   - gooddata_profile: local
     data_product_ids:
-      - gooddata_demo_g
+      - gooddata_demo
 global_properties:
   test_insights_parallelism: 4
